@@ -12,6 +12,7 @@ CMD ["/sbin/my_init"]
 EXPOSE 10000-20000/udp
 Expose 5060/udp
 Expose 80
+Expose 8088
  
 RUN apt-get update && apt-get install wget build-essential \ 
  
