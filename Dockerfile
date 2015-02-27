@@ -22,10 +22,10 @@ RUN  useradd -r -incredible \
   && apt-get purge -y
 
 WORKDIR /root/
-RUN wget http://incrediblepbx.com/incrediblepbx11.4.ubuntu14.tar.gz
-  && tar zxvf incrediblepbx*
-  && ./create-swapfile-DO
-#  && ./Incredible*
+RUN wget http://incrediblepbx.com/incrediblepbx11guiU.tar.gz
+  && tar zxvf incrediblepbx11guiU.tar.gz
+  && rm -f incrediblepbx11guiU.tar.gz
+  && ./IncrediblePBX11U-GUI.sh
 
 ADD start.sh /root/
 CMD bash -C '/root/start.sh';'bash'
