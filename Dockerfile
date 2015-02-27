@@ -9,6 +9,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV INCREDIBLE_PW pass123
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
+EXPOSE 10000-20000/udp
+Expose 5060/udp
+Expose 80
  
 RUN apt-get update && apt-get install wget build-essential \ 
  
