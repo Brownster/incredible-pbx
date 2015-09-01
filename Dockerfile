@@ -5,7 +5,6 @@ ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
 ENV INCREDIBLE_PW pass123
 ENV INCREDIBLE_USER incredible
-# Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 EXPOSE 10000-20000/udp
 Expose 5060/udp
@@ -16,7 +15,7 @@ RUN apt-get update && apt-get install -y wget build-essential ssh \
  
 #Add user
 # grab gosu for easy step-down from root
-  && useradd -r -g $INCREDIBLE_USER $INCREDIBLE_PW \
+  && useradd useradd -c $INCREDIBLE_USER -p $INCREDIBLE_PW\
   && usermod --home /var/lib/asterisk incredible \
   && rm -rf /var/lib/apt/lists/* \
 #SSH adjustments  
@@ -24,7 +23,6 @@ RUN apt-get update && apt-get install -y wget build-essential ssh \
   && sed -i 's|yes"|without-password"|' /etc/ssh/sshd_config \
   && sed -i 's|"quiet"|"quiet text"|' /etc/default/grub \
   && update-grub \
-  
   
 #Install Incredible PBX
   && apt-get purge -y \
