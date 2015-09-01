@@ -11,10 +11,10 @@ Expose 5060/udp
 Expose 80
 Expose 8088
 WORKDIR /root/
-RUN apt-get update && apt-get install -y wget build-essential ssh \ 
+RUN apt-get update && apt-get install -y wget build-essential ssh
  
 #Add user
-  && useradd -c $INCREDIBLE_USER -p $INCREDIBLE_PW\
+RUN useradd -c $INCREDIBLE_USER -p $INCREDIBLE_PW\
   && usermod --home /var/lib/asterisk incredible \
   && rm -rf /var/lib/apt/lists/* \
 #SSH adjustments  
