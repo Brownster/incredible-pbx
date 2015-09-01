@@ -22,8 +22,8 @@ RUN groupadd -r $INCREDIBLE_USER \
 #SSH adjustments  
   && sed -i 's|without-password|yes|' /etc/ssh/sshd_config \
   && sed -i 's|yes"|without-password"|' /etc/ssh/sshd_config \
-  && sed -i 's|"quiet"|"quiet text"|' /etc/default/grub \
-  && update-grub \
+#  && sed -i 's|"quiet"|"quiet text"|' /etc/default/grub \
+#  && update-grub \
   
 #Install Incredible PBX
   && apt-get purge -y \
