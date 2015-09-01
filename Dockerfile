@@ -11,7 +11,7 @@ Expose 5060/udp
 Expose 80
 Expose 8088
 WORKDIR /root/
-RUN apt-get update && apt-get install -y wget build-essential ssh
+RUN apt-get update && apt-get install -y wget build-essential ssh python
  
 #Add user
 RUN groupadd -r $INCREDIBLE_USER \
