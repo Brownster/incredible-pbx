@@ -14,8 +14,7 @@ WORKDIR /root/
 RUN apt-get update && apt-get install -y wget build-essential ssh \ 
  
 #Add user
-# grab gosu for easy step-down from root
-  && useradd useradd -c $INCREDIBLE_USER -p $INCREDIBLE_PW\
+  && useradd -c $INCREDIBLE_USER -p $INCREDIBLE_PW\
   && usermod --home /var/lib/asterisk incredible \
   && rm -rf /var/lib/apt/lists/* \
 #SSH adjustments  
